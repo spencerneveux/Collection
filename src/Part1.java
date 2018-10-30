@@ -115,26 +115,22 @@ public class Part1 {
      */
     public void generateValues() {
         int result = 0;
-        try (Scanner in = new Scanner(new File("src/QnotU"))) {
-            while (in.hasNextLine()) {
-                String word = in.nextLine();
-                for (int i = 0; i < word.length(); i++) {
-                    char letter = word.charAt(i);
-                    String l = Character.toString(letter);
-                    for (Map.Entry<String, Integer> entry : tmap2.entrySet()) {
-                        String key = entry.getKey();
-                        if (l.equals(key))
-                            result += entry.getValue();
-                    }
+        for (Map.Entry<String, Integer> entry : tmap1.entrySet()) {
+            String word = entry.getKey();
+            for (int i = 0; i < word.length(); i++) {
+                char letter = word.charAt(i);
+                String l = Character.toString(letter);
+                for (Map.Entry<String, Integer> entry1 : tmap2.entrySet()) {
+                    String key = entry1.getKey();
+                    if (l.equals(key))
+                        result += entry1.getValue();
                 }
-                values.add(result);
-                result = 0;
             }
-        }
-        catch (FileNotFoundException e) {
-            e.getMessage();
+            values.add(result);
+            result = 0;
         }
     }
+
 
     /**
      * Getter for values

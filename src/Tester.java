@@ -10,7 +10,7 @@ public class Tester {
 //
 //
 //        // Importing QnotU into TreeMap & finding time
-//        System.out.println(p1.importQT());
+        System.out.println(p1.importQT());
 //
 //        // Importing QnotU into Hashmap & finding time
 //        System.out.println(p1.importQH());
