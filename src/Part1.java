@@ -5,21 +5,19 @@ import java.util.*;
 public class Part1 {
     TreeMap<String, Integer> tmap1, tmap2;
     HashMap<String, Integer> hmap1, hmap2;
-    List<Integer> values;
 
     public Part1() {
         tmap1 = new TreeMap<>();
         tmap2 = new TreeMap<>();
         hmap1 = new HashMap<>();
         hmap2 = new HashMap<>();
-        values = new ArrayList<>();
     }
 
     /**
      * Method to import QnotU file into TreeMap
      * @return long value of time to complete import
      */
-    public long importQT() {
+    public long importTree() {
         Date today = new Date();
         long time1, time2;
         time1 = System.currentTimeMillis();
@@ -40,7 +38,7 @@ public class Part1 {
      * Method to import QnotU file into Hashmap
      * @return long value of time to complete import
      */
-    public long importQH() {
+    public long importHash() {
         Date today = new Date();
         long time1, time2;
         time1 = System.currentTimeMillis();
@@ -111,9 +109,9 @@ public class Part1 {
 
 
     /**
-     * Generate Values for Q not U file
+     * Generate Values for QnotU file into treemap
      */
-    public void generateValues() {
+    public void generateValuesTreeMap() {
         int result = 0;
         for (Map.Entry<String, Integer> entry : tmap1.entrySet()) {
             String word = entry.getKey();
@@ -126,19 +124,42 @@ public class Part1 {
                         result += entry1.getValue();
                 }
             }
-            values.add(result);
+            tmap1.put(entry.getKey(), result);
+            result = 0;
+        }
+    }
+
+    /**
+     * Generate values for QnotU file into hashmap
+     */
+    public void generateValuesHashMap() {
+        int result = 0;
+        for (Map.Entry<String, Integer> entry : hmap1.entrySet()) {
+            String word = entry.getKey();
+            for (int i = 0; i < word.length(); i++) {
+                char letter = word.charAt(i);
+                String l = Character.toString(letter);
+                for (Map.Entry<String, Integer> entry1 : hmap2.entrySet()) {
+                    String key = entry1.getKey();
+                    if (l.equals(key))
+                        result += entry1.getValue();
+                }
+            }
+            hmap1.put(entry.getKey(), result);
             result = 0;
         }
     }
 
 
     /**
-     * Getter for values
-     * @return list of values
+     * Print out treeMap key and value
      */
-    public List<Integer> getValues() {
-        return values;
+    public void printTreeMap() {
+        for (Map.Entry<String, Integer> entry : tmap1.entrySet()) {
+            String key = entry.getKey();
+            int value = entry.getValue();
+            System.out.println("Key is " + key + ", Value is: " + value);
+        }
     }
-
 
 }
