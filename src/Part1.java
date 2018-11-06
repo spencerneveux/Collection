@@ -162,4 +162,15 @@ public class Part1 {
         }
     }
 
+    /**
+     * Print out hashmap
+     */
+    public void printHashMap() {
+        for (Map.Entry<String, Integer> entry : hmap1.entrySet()) {
+            String key = entry.getKey();
+            int value = entry.getValue();
+            System.out.println("Key is " + key + ", Value is: " + value);
+        }
+    }
+
 }
