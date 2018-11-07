@@ -39,11 +39,17 @@ public class Tester {
 
         //Part 3
         Part3 p3 = new Part3();
-        System.out.println("Enter number of teams: ");
-        Scanner in = new Scanner(System.in);
-        int numTeams = in.nextInt();
-        p3.generateTeams(numTeams);
-        System.out.println("The time to load into arraylist is: " + p3.loadListArray());
-        System.out.println(p3.getArrayTeams());
+//        System.out.println("Adding Scavenger hunt to Array List");
+//        System.out.println("Time taken: " + p3.loadArrayList());
+//        System.out.println("Adding Scavenger hunt to Linked List");
+//        System.out.println("Time taken: " + p3.loadLinkedList());
+//        System.out.println("Iterating through Array List. Time: " + p3.iterateArrayList());
+        System.out.println("Iterating through Linked List. Time: " + p3.iterateLinkedList());
+//        System.out.println("Enter number of teams: ");
+//        Scanner in = new Scanner(System.in);
+//        int numTeams = in.nextInt();
+//        p3.generateTeams(numTeams);
+//        System.out.println("The time to load into arraylist is: " + p3.loadListArray());
+//        System.out.println(p3.getArrayTeams());
     }
 }
