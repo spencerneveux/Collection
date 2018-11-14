@@ -18,7 +18,7 @@ public class Part3 {
      */
     public long loadArrayList() {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         try (Scanner in = new Scanner(new File("src/ScavengerHunt"))) {
             while (in.hasNextLine()) {
                 String item = in.nextLine();
@@ -28,7 +28,7 @@ public class Part3 {
         catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -38,7 +38,7 @@ public class Part3 {
      */
     public long loadLinkedList() {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         try (Scanner in = new Scanner(new File("src/ScavengerHunt"))) {
             while (in.hasNextLine()) {
                 String item = in.nextLine();
@@ -48,7 +48,7 @@ public class Part3 {
         catch(FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -111,9 +111,9 @@ public class Part3 {
      */
     public long loadTeamArrayList() {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         for (List team : ArrayTeams) {
-            try (Scanner in = new Scanner(new File("src/output"))) {
+            try (Scanner in = new Scanner(new File("src/ScavengerHunt"))) {
                 while (in.hasNextLine()) {
                     String item = in.nextLine();
                     team.add(item);
@@ -124,7 +124,7 @@ public class Part3 {
                 System.out.println(e.getMessage());
             }
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -135,7 +135,7 @@ public class Part3 {
      */
     public long loadTeamLinkedList() {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         for (List team : LinkedTeams) {
             try (Scanner in = new Scanner(new File("src/ScavengerHunt"))) {
                 while(in.hasNextLine()) {
@@ -148,7 +148,7 @@ public class Part3 {
                 System.out.println(e.getMessage());
             }
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -159,11 +159,11 @@ public class Part3 {
      */
     public long searchArrayList(int position) {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         for (List<String> team: ArrayTeams) {
             String item = team.get(position);
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -174,11 +174,11 @@ public class Part3 {
      */
     public long searchLinkedList(int position) {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         for (List<String> team: LinkedTeams) {
             String item = team.get(position);
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -190,11 +190,11 @@ public class Part3 {
      */
     public long insertArrayList(int position, String element) {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         for (List<String> team: ArrayTeams) {
             team.set(position, element);
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -204,13 +204,13 @@ public class Part3 {
      * @param element new element to be inserted
      * @return time taken to insert element
      */
-    public long insertLinkeList(int position, String element) {
+    public long insertLinkedList(int position, String element) {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         for (List<String> team  : LinkedTeams) {
             team.set(position,element);
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -220,12 +220,12 @@ public class Part3 {
      */
     public long randomArrayList() {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         for (List<String> team : ArrayTeams) {
             int randomNumber = (int)(Math.random() * 100);
             team.get(randomNumber);
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -235,12 +235,12 @@ public class Part3 {
      */
     public long randomLinkedList() {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         for (List<String> team : LinkedTeams) {
             int randomNumber = (int)(Math.random() * 100);
             team.get(randomNumber);
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 

@@ -20,7 +20,7 @@ public class Part1 {
     public long importTree() {
         Date today = new Date();
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         try (Scanner input = new Scanner(new File("src/QnotU"))) {
             while (input.hasNextLine()) {
                 String line = input.nextLine();
@@ -30,7 +30,7 @@ public class Part1 {
         catch (FileNotFoundException e) {
             e.getMessage();
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -41,7 +41,7 @@ public class Part1 {
     public long importHash() {
         Date today = new Date();
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         try (Scanner input = new Scanner(new File("src/QnotU"))) {
             while (input.hasNextLine()) {
                 String line = input.nextLine();
@@ -51,7 +51,7 @@ public class Part1 {
         catch (FileNotFoundException e) {
             e.getMessage();
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -60,7 +60,7 @@ public class Part1 {
      */
     public long importScrabbleT() {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         try(Scanner in = new Scanner(new File("src/scrabbleValues"))) {
             // Scan through every line
             while (in.hasNextLine()) {
@@ -77,7 +77,7 @@ public class Part1 {
         catch (FileNotFoundException e) {
             e.getMessage();
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -86,7 +86,7 @@ public class Part1 {
      */
     public long importScrabbleH() {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         try(Scanner in = new Scanner(new File("src/scrabbleValues"))) {
             // Scan through every line
             while (in.hasNextLine()) {
@@ -103,7 +103,7 @@ public class Part1 {
         catch (FileNotFoundException e) {
             e.getMessage();
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2 - time1);
     }
 
@@ -111,7 +111,9 @@ public class Part1 {
     /**
      * Generate Values for QnotU file into treemap
      */
-    public void generateValuesTreeMap() {
+    public long generateValuesTreeMap() {
+        long time1, time2;
+        time1 = System.nanoTime();
         int result = 0;
         for (Map.Entry<String, Integer> entry : tmap1.entrySet()) {
             String word = entry.getKey();
@@ -127,12 +129,16 @@ public class Part1 {
             tmap1.put(entry.getKey(), result);
             result = 0;
         }
+        time2 = System.nanoTime();
+        return (time2-time1);
     }
 
     /**
      * Generate values for QnotU file into hashmap
      */
-    public void generateValuesHashMap() {
+    public long generateValuesHashMap() {
+        long time1, time2;
+        time1 = System.nanoTime();
         int result = 0;
         for (Map.Entry<String, Integer> entry : hmap1.entrySet()) {
             String word = entry.getKey();
@@ -148,6 +154,8 @@ public class Part1 {
             hmap1.put(entry.getKey(), result);
             result = 0;
         }
+        time2 = System.nanoTime();
+        return (time2-time1);
     }
 
 

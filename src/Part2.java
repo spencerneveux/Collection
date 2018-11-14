@@ -24,7 +24,7 @@ public class Part2 {
      */
     public long importHashSet(String path) {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         try (Scanner in = new Scanner(new File(path))) {
             while (in.hasNextLine()) {
                 String line = in.nextLine();
@@ -38,7 +38,7 @@ public class Part2 {
         catch(FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2-time1);
     }
 
@@ -49,7 +49,7 @@ public class Part2 {
      */
     public long searchHash(String word) {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         Iterator<String> iterator = hashSet.iterator();
         for (int i = 0; i < 100; i++) {
             while (iterator.hasNext()) {
@@ -58,7 +58,7 @@ public class Part2 {
                     break;
             }
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2-time1);
     }
 
@@ -69,7 +69,7 @@ public class Part2 {
      */
     public long importTreeSet(String path) {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         try (Scanner in = new Scanner(new File(path))) {
             while (in.hasNextLine()) {
                 String line = in.nextLine();
@@ -83,7 +83,7 @@ public class Part2 {
         catch(FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2-time1);
     }
 
@@ -94,7 +94,7 @@ public class Part2 {
      */
     public long searchTree(String word) {
         long time1, time2;
-        time1 = System.currentTimeMillis();
+        time1 = System.nanoTime();
         Iterator<String> iterator = treeSet.iterator();
         for (int i = 0; i < 100; i++) {
             while (iterator.hasNext()) {
@@ -103,7 +103,7 @@ public class Part2 {
                     break;
             }
         }
-        time2 = System.currentTimeMillis();
+        time2 = System.nanoTime();
         return (time2-time1);
     }
 }
