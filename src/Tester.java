@@ -2,6 +2,21 @@ import java.util.Scanner;
 
 public class Tester {
     public static void main(String[] args) {
+        String temp = args[0];
+        if (temp.equals("TreeMap")) {
+            part1TreeMap();
+        }else if (temp.equals("HashMap")) {
+            part1Hashmap();
+        }else if (temp.equals("HashSet")) {
+            part2HashSet();
+        }else if (temp.equals("TreeSet")) {
+            part2TreeSet();
+        }else if (temp.equals("ArrayList")) {
+            part3ArrayList();
+        }else if (temp.equals("LinkedList")) {
+            part3LinkedList();
+        }
+
         mainMenu();
         Scanner in = new Scanner(System.in);
         System.out.println("Enter choice: ");
